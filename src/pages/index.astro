@@ -5,8 +5,26 @@ import { getCollection } from 'astro:content';
 const books = await getCollection('books')
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Books 4 Devs">
 	<main>
 		<h1 class="text-center text-7xl font-extrabold">Dev 📕 <span class="block">Bookstore</span> </h1>
 	</main>
+	<section aria-label="Books recommended for Devs">
+		<div class="px-4 mx-auto max-w-screen-xl">
+			<div class="grid gap-6 md:grid-cols-2">
+				{
+					books.map(book =>{
+						const {slug, data} = book
+						const {title, author, img, readtime, description, buy} = data
+
+						return (
+							<article>
+							<img src={`/${img}`} alt={title} class="w-full rounded-lg"/>
+							<h3>{title}</h3></article>
+						)
+					})
+				}
+			</div>
+		</div>
+	</section>
 </Layout>
