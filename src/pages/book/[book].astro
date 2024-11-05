@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
+import { SHOW_BUY_BUTTON } from "astro:env/server";
 
 export async function getStaticPaths() {
   const books = await getCollection("books");
@@ -21,6 +22,7 @@ const { Content } = await render(book);
 <Layout title={`${title} - Dev Books`}>
   <div class="flex gap-12">
     <aside>
+      <a href="/" class="hover:underline opacity-70">{"<- Go back"}</a>
       <img
         transition:name={`img-${slug}`}
         class="rounded w-72 h-auto"
