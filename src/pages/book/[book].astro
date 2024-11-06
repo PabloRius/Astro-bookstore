@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { SHOW_BUY_BUTTON } from "astro:env/server";
 import AmazonLogo from "../../components/AmazonLogo.astro";
+import BookScore from "../../components/BookScore.astro";
 
 export async function getStaticPaths() {
   const books = await getCollection("books");
@@ -30,6 +31,7 @@ const { Content } = await render(book);
         src={`/img/${img}`}
         alt={title}
       />
+      <BookScore />
       {
         SHOW_BUY_BUTTON && (
           <a
