@@ -9,7 +9,7 @@
     .then((res) => res.text())
     .then((scoreValue) => {
       if (scoreElement) {
-        scoreElement.innerHTML = `⭐ Puntuación: ${scoreValue}`;
+        scoreElement.innerHTML = `⭐ Puntuación: ${scoreValue.trim()}/5`;
       }
     });
 </script>
