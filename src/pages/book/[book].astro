@@ -19,6 +19,8 @@ const { data, slug } = book;
 const { title, author, img, readtime, description, buy } = data;
 
 const { Content } = await render(book);
+
+export const prerender = true;
 ---
 
 <Layout title={`${title} - Dev Books`}>
@@ -31,7 +33,10 @@ const { Content } = await render(book);
         src={`/img/${img}`}
         alt={title}
       />
-      <BookScore id={slug} />
+      <BookScore id={slug}>
+        <span slot="fallback" class="text-xs opacity-70">Loading score ...</span
+        >
+      </BookScore>
       {
         SHOW_BUY_BUTTON && (
           <a
