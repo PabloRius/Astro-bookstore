@@ -13,6 +13,10 @@ export default defineConfig({
         context: "server",
         access: "public",
       }),
+      SCORE_API_ENDPOINT: envField.string({
+        context: "client",
+        access: "public",
+      }),
     },
   },
 });
