@@ -31,7 +31,7 @@ const { Content } = await render(book);
         src={`/img/${img}`}
         alt={title}
       />
-      <BookScore />
+      <BookScore id={slug} />
       {
         SHOW_BUY_BUTTON && (
           <a
