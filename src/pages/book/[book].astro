@@ -33,7 +33,7 @@ export const prerender = true;
         src={`/img/${img}`}
         alt={title}
       />
-      <BookScore id={slug}>
+      <BookScore server:defer id={slug}>
         <span slot="fallback" class="text-xs opacity-70">Loading score ...</span
         >
       </BookScore>
