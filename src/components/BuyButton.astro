@@ -1,11 +1,17 @@
 ---
+import { countryCodes } from "../config/countryCodes";
 import AmazonLogo from "./AmazonLogo.astro";
 
 const UNITED_KINGDOM = "UK";
 
-const country = Astro.request.headers.get("X-Vercel-IP-Country") ?? "UK";
+const country =
+  ((Astro.request.headers.get("X-Vercel-IP-Country") ||
+    "UK") as keyof typeof countryCodes) || "UK";
 
-const storeCountry = country === UNITED_KINGDOM ? "uk" : "spain";
+const countryData =
+  country in countryCodes ? countryCodes[country] : countryCodes.UK;
+const storeCountry = countryData.urlName;
+const storeName = countryData.name;
 
 const { buy } = Astro.props;
 
@@ -19,6 +25,6 @@ const url = buy[storeCountry];
   rel="noopener noreferrer"
   class="text-balance inline-flex gap-2 items-center bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold py-2 px-4 rounded-lg border border-yellow-500 transition duration-200 ease-in-out hover:scale-105 justify-center text-center"
 >
-  Buy in Amazon UK
+  Buy in Amazon {storeName}
   <AmazonLogo />
 </a>
