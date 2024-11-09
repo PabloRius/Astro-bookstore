@@ -8,6 +8,7 @@ const books = defineCollection({
     readtime: z.number(),
     description: z.string(),
     buy: z.object({
+      uk: z.string().url(),
       spain: z.string().url(),
       usa: z.string().url(),
     }),

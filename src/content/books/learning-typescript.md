@@ -5,6 +5,7 @@ img: learning-typescript.jpg
 readtime: 301
 description: Domina TypeScript de 0 a experto
 buy:
+  uk: https://amzn.eu/d/0GXTFDZ
   spain: https://amzn.to/3zlkdes
   usa: https://www.amazon.com/-/es/Josh-Goldberg/dp/1098110331
 ---

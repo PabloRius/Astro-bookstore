@@ -5,6 +5,7 @@ img: pragmatic-programmer.jpeg
 readtime: 344
 description: Andy and Dave wrote this influential, classic book to help their clients create better software and rediscover the joy of coding
 buy:
+  uk: https://a.co/d/3FuhIUK
   spain: https://amzn.to/3BaK8WQ
   usa: https://www.amazon.com/-/es/Andrew-Hunt/dp/020161622X
 ---
